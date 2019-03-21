@@ -1,6 +1,9 @@
+
+tt=
 output$classement <- DT::renderDataTable(
   DT::datatable({
-    final_riders
+    subset( final_riders, select = -c(id_rider,ok,pts,DP,RS,jour_naissance,team_spirit,exp_level) )
+   
   }
   ,extensions = c(
     #"FixedColumns", 
@@ -8,6 +11,7 @@ output$classement <- DT::renderDataTable(
     "Scroller",
     "ColReorder",
     "Buttons"), options = list(
+    columnDefs = list(list(className = 'dt-center',targets="_all")),
     #scroller = TRUE,
     colReorder = TRUE,
     scrollX = TRUE,
@@ -37,12 +41,4 @@ output$classement <- DT::renderDataTable(
  %>%
   formatCurrency("value", digits = 0)
 )
-  # ) %>%
-  # formatStyle(
-  #   'Petal.Length',
-  #   background = styleColorBar(iris$Petal.Length, 'steelblue'),
-  #   backgroundSize = '100% 90%',
-  #   backgroundRepeat = 'no-repeat',
-  #   backgroundPosition = 'center'
-  # ) %>%
-#BCRrilftp
+  
