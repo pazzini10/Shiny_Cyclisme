@@ -1,6 +1,13 @@
 #setwd("/home/ldapusers/dflouriot/Shiny/TDB_RubX/")
 #getwd() 
+#packrat::set_opts(external.packages = c("devtools"))
+# unlink("./packrat/lib-R", recursive = TRUE)
+# unlink("./packrat/lib-ext", recursive = TRUE)
+library(devtools)
+packrat::on()
 
+
+#library(rmarkdown)
 library(shiny)
 library(shinyBS)
 library(shinyjs)
@@ -11,7 +18,7 @@ library(dplyr)
 library(DT)
 library(datasets)
 library(shinythemes)
-library(withr)
+#library(withr)
 library(ggplot2)
 library(plotly)
 library(ggthemes)
@@ -31,6 +38,6 @@ library (dplyr)
 library (RColorBrewer)
 
  
-load(file = "/Users/dflouriot/R/Cyclisme/Scrapping/Data/final_riders.RData")
+load(file = '/home/dflouriot/Documents/R/Scrapping/Cyclisme/Scrapping/Data/final_riders.RData')
 
-
+.libPaths()
