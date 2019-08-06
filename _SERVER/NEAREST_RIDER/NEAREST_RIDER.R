@@ -65,7 +65,7 @@ select_rider=function(i){
       formatStyle(
         c('CL','DH','HL','SP','FR','CB','TT','TQ'),
         
-        Color = styleInterval(c(50,60,70,80,90), c('black','bisque','lightgreen','chartreuse','green','darkgreen'))
+        Color = styleInterval(c(49,59,69,79,89), c('black','blue','purple','green','darkgreen','red'))
       )
     %>%
       formatCurrency("value", digits = 0)

@@ -1,5 +1,5 @@
 
-tt=
+
 output$classement <- DT::renderDataTable(
   DT::datatable({
     subset( final_riders, select = -c(id_rider,ok,pts,DP,RS,jour_naissance,team_spirit,exp_level) )
@@ -36,7 +36,7 @@ output$classement <- DT::renderDataTable(
   formatStyle(
     c('CL','DH','HL','SP','FR','CB','TT','TQ'),
      
-    Color = styleInterval(c(50,60,70,80,90), c('black','bisque','lightgreen','chartreuse','green','darkgreen'))
+    Color = styleInterval(c(49,59,69,79,89), c('black','blue','purple','green','darkgreen','red'))
   )
  %>%
   formatCurrency("value", digits = 0)

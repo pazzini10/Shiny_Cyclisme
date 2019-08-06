@@ -3,17 +3,19 @@
 #packrat::set_opts(external.packages = c("devtools"))
 # unlink("./packrat/lib-R", recursive = TRUE)
 # unlink("./packrat/lib-ext", recursive = TRUE)
+#packrat::off()
 library(devtools)
+#library(shiny)
 packrat::on()
 
 
 #library(rmarkdown)
-library(shiny)
+#library(shiny)
 library(shinyBS)
 library(shinyjs)
 library(shinydashboard)
 library(shinythemes)
-library(formattable)
+#library(formattable)
 library(dplyr)
 library(DT)
 library(datasets)
@@ -22,7 +24,7 @@ library(shinythemes)
 library(ggplot2)
 library(plotly)
 library(ggthemes)
-library(stringr)
+#library(stringr)
 library(reshape2)
 library(scales)
 library(haven)
@@ -37,7 +39,9 @@ library(plotrix)
 library (dplyr)
 library (RColorBrewer)
 
- 
-load(file = '/home/dflouriot/Documents/R/Scrapping/Cyclisme/Scrapping/Data/final_riders.RData')
 
-.libPaths()
+lfile=list.files(path = "/home/dflouriot/Documents/R/Scrapping/Cyclisme/Scrapping/Data/CronData/", pattern = 'final_riders') 
+
+load(file =paste0('/home/dflouriot/Documents/R/Scrapping/Cyclisme/Scrapping/Data/CronData/',lfile[max(length(lfile))]))
+
+load(file ='/home/dflouriot/Documents/R/Scrapping/Cyclisme/Scrapping/Data/CronData/results_agtop_races_classiques.RData')

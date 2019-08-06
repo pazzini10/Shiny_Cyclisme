@@ -35,6 +35,13 @@ shinyUI(#fluidPage(
         icon = icon("address-card")
         
         
+      ),
+      menuItem(
+        "Palmares Riders",
+        tabName = "PALMARES_RIDER",
+        icon = icon("address-card")
+        
+        
       )
     )
     ),
@@ -51,7 +58,12 @@ shinyUI(#fluidPage(
         tabItem(
           "NEAREST_RIDER",
           source("./_UI/NEAREST_RIDER/NEAREST_RIDER.R")$value
+        ),
+        tabItem(
+          "PALMARES_RIDER",
+          source("./_UI/PALMARES_RIDER/PALMARES_RIDER.R")$value
         )
+        
         
 
         
