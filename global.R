@@ -1,4 +1,4 @@
-#setwd("/home/ldapusers/dflouriot/Shiny/TDB_RubX/")
+#setwd("/home/dflouriot/Documents/R/Shiny_Cyclisme")
 #getwd() 
 #packrat::set_opts(external.packages = c("devtools"))
 # unlink("./packrat/lib-R", recursive = TRUE)
@@ -7,6 +7,8 @@
 library(devtools)
 #library(shiny)
 packrat::on()
+#packrat::on()
+
 
 
 #library(rmarkdown)
@@ -38,10 +40,17 @@ library(labeling)
 library(plotrix)
 library (dplyr)
 library (RColorBrewer)
+library(sp)
+library(rgdal)
+library(leaflet)
 
 
 lfile=list.files(path = "/home/dflouriot/Documents/R/Scrapping/Cyclisme/Scrapping/Data/CronData/", pattern = 'final_riders') 
-
 load(file =paste0('/home/dflouriot/Documents/R/Scrapping/Cyclisme/Scrapping/Data/CronData/',lfile[max(length(lfile))]))
 
+lfile_c=list.files(path = "/home/dflouriot/Documents/R/Scrapping/Cyclisme/Scrapping/Data/CronData/", pattern = 'team_country')
+load(file =paste0('/home/dflouriot/Documents/R/Scrapping/Cyclisme/Scrapping/Data/CronData/',lfile_c[max(length(lfile_c))]))
+
 load(file ='/home/dflouriot/Documents/R/Scrapping/Cyclisme/Scrapping/Data/CronData/results_agtop_races_classiques.RData')
+
+map_countries=readOGR("/home/dflouriot/Documents/R/Shapes/Countries/World_Countries.shp")

@@ -42,6 +42,13 @@ shinyUI(#fluidPage(
         icon = icon("address-card")
         
         
+      ),
+      menuItem(
+        "Teams Countries",
+        tabName = "SHAPES_TEAM",
+        icon = icon("address-card")
+        
+        
       )
     )
     ),
@@ -62,6 +69,10 @@ shinyUI(#fluidPage(
         tabItem(
           "PALMARES_RIDER",
           source("./_UI/PALMARES_RIDER/PALMARES_RIDER.R")$value
+        ),
+        tabItem(
+          "SHAPES_TEAM",
+          source("./_UI/SHAPES_TEAM/SHAPES_TEAM.R")$value
         )
         
         
